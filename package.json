@@ -1,0 +1,18 @@
+{
+  "name": "eng-wordnet-princeton-3.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:open-language/eng-wordnet-princeton-3.0.git",
+  "author": "Sudhanshu Raheja <sudhanshu@leftshift.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^22.6.4",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1"
+  }
+}
