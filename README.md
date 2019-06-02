@@ -12,7 +12,7 @@ The latest version of the Wordnet can be found at the [website](https://wordnet.
 
 ## Is this credible?
 
-WordNet is probably one of _the_ most credible sources of data on the internet right now. If you would like to try it out for yourself, please [go here](http://wordnetweb.princeton.edu/perl/webwn).
+WordNet is probably one of _the_ most credible sources of lexical data in english on the internet right now. If you would like to try it out for yourself, please [go here](http://wordnetweb.princeton.edu/perl/webwn).
 
 ## Are there things that are missing
 
@@ -35,3 +35,4 @@ The complete license for Wordnet can be found on [their website](https://wordnet
 ## Credits
 
 - [TJ Holowaychuk](https://github.com/tj) for showing us how to use black and white beautifully to create the image on the top of the readme. Inspiration from [apex/up](https://github.com/apex/up)
+- [Princeton Univerysity's Wordnet](https://wordnet.princeton.edu/) for bringing so much sanity in the world
