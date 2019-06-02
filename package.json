@@ -1,6 +1,6 @@
 {
   "name": "en-wordnet",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "repository": "git@github.com:open-language/en-wordnet.git",
   "author": "Sudhanshu Raheja <sudhanshu@leftshift.io>",
@@ -10,6 +10,13 @@
     "language": "en",
     "version": "3.1"
   },
+  "keywords": [
+    "wordnet",
+    "natural-language-processing",
+    "english-language",
+    "language",
+    "nlp"
+  ],
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
