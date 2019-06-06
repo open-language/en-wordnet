@@ -6,6 +6,9 @@ En-Wordnet is a node.js module which makes [Princeton University's Wordnet](http
 
 WordNet® is a large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations. The resulting network of meaningfully related words and concepts can be navigated with the browser. WordNet is also freely and publicly available for download. WordNet's structure makes it a useful tool for computational linguistics and natural language processing.
 
+![](https://img.shields.io/travis/open-language/en-wordnet.svg)
+![](https://img.shields.io/codecov/c/github/open-language/en-wordnet/master.svg)
+
 ## Where did you find this?
 
 The latest version of the Wordnet can be found at the [website](https://wordnet.princeton.edu/download/current-version). There are links to both the 3.0 version and the 3.1 version. We are using the `data` and `index` files from the 3.1 DB version.
