@@ -1,6 +1,6 @@
 {
   "name": "en-wordnet",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "main": "index.js",
   "repository": "git@github.com:open-language/en-wordnet.git",
   "author": "Sudhanshu Raheja <sudhanshu@leftshift.io>",
@@ -37,5 +37,6 @@
     "start": "node index.js",
     "test": "tsc && jest --detectOpenHandles",
     "build": "tsc"
-  }
+  },
+  "files": ["dist/**/*"]
 }
