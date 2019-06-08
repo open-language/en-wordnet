@@ -1,7 +1,8 @@
 {
   "name": "en-wordnet",
-  "version": "2.0.3",
-  "main": "index.js",
+  "version": "2.0.4",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "repository": "git@github.com:open-language/en-wordnet.git",
   "author": "Sudhanshu Raheja <sudhanshu@leftshift.io>",
   "license": "MIT",
