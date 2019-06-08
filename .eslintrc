@@ -2,8 +2,8 @@
   "env": {
     "node": true
   },
-  "extends": ["airbnb-base", "plugin:jest/recommended", "prettier", "plugin:security/recommended"],
-  "parser": "babel-eslint",
+  "extends": ["airbnb-base", "plugin:jest/recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
   "rules": {},
-  "plugins": ["jest", "security"]
+  "plugins": ["jest"]
 }
