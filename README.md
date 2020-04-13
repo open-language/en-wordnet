@@ -1,3 +1,7 @@
+### Archived
+
+This package is archived. Please use [open-language/wordnets](https://github.com/open-language/wordnets)
+
 ![](assets/wordnet-readme-logo.png)
 
 En-Wordnet is a node.js module which makes [Princeton University's Wordnet](https://wordnet.princeton.edu/) available as a package.
@@ -28,7 +32,8 @@ The Parser for wordnet DB files will be in a separate repository. I did this bec
 ## How to I understand the data structures
 
 The data structure is very clearly defined in these two documents
-- [wndb](https://wordnet.princeton.edu/documentation/wndb5wn), which talks about index.* and data.* files
+
+- [wndb](https://wordnet.princeton.edu/documentation/wndb5wn), which talks about index._ and data._ files
 - [wninput](https://wordnet.princeton.edu/documentation/wninput5wn), which talks about the lexicographer file format and the word syntax
 
 ## This is released under which license?
