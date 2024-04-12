@@ -2,6 +2,7 @@
   "name": "en-wordnet",
   "version": "2.0.6",
   "main": "dist/index.js",
+  "type": "module",
   "repository": "git@github.com:open-language/en-wordnet.git",
   "author": "Sudhanshu Raheja <sudhanshu@leftshift.io>",
   "license": "MIT",
@@ -18,11 +19,10 @@
     "nlp"
   ],
   "devDependencies": {
-    "jest": "^25.5.4",
+    "bun-types": "^1.1.3",
     "prettier": "^2.0.5"
   },
   "scripts": {
-    "start": "node index.js",
-    "test": "jest --detectOpenHandles"
+    "start": "node index.js"
   }
 }
