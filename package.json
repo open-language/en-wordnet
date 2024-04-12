@@ -2,7 +2,6 @@
   "name": "en-wordnet",
   "version": "2.0.6",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "repository": "git@github.com:open-language/en-wordnet.git",
   "author": "Sudhanshu Raheja <sudhanshu@leftshift.io>",
   "license": "MIT",
@@ -19,28 +18,11 @@
     "nlp"
   ],
   "devDependencies": {
-    "@babel/preset-typescript": "^7.9.0",
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.4",
-    "@typescript-eslint/parser": "^2.30.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.8.2",
     "jest": "^25.5.4",
-    "prettier": "^2.0.5",
-    "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "prettier": "^2.0.5"
   },
   "scripts": {
     "start": "node index.js",
-    "test": "tsc && jest --detectOpenHandles",
-    "build": "tsc"
-  },
-  "files": [
-    "dist/**/*",
-    "database/**/*"
-  ]
+    "test": "jest --detectOpenHandles"
+  }
 }
