@@ -13,6 +13,16 @@ WordNet® is a large lexical database of English. Nouns, verbs, adjectives and a
 ![](https://img.shields.io/travis/open-language/en-wordnet.svg)
 ![](https://img.shields.io/codecov/c/github/open-language/en-wordnet/master.svg)
 
+## Getting started
+
+We use [bun](https://bun.sh/) for this project.
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+bun install
+bun test
+```
+
 ## Where did you find this?
 
 The latest version of the Wordnet can be found at the [website](https://wordnet.princeton.edu/download/current-version). There are links to both the 3.0 version and the 3.1 version. We are using the `data` and `index` files from the 3.1 DB version.
