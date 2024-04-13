@@ -1,6 +1,6 @@
 {
   "name": "en-wordnet",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,6 +33,7 @@
     "build": "bun run build.mjs"
   },
   "files": [
-    "dist"
+    "dist",
+    "database"
   ]
 }
