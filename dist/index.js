@@ -1,1 +1,209 @@
-var{create:J,defineProperty:_,getOwnPropertyDescriptor:L,getOwnPropertyNames:R,getPrototypeOf:b}=Object,m=Object.prototype.hasOwnProperty,w=(M,K)=>()=>(K||M((K={exports:{}}).exports,K),K.exports),y=(M,K)=>{for(var I in K)_(M,I,{get:K[I],enumerable:!0})},Z=(M,K,I,V)=>{if(K&&typeof K=="object"||typeof K=="function")for(let T of R(K))!m.call(M,T)&&T!==I&&_(M,T,{get:()=>K[T],enumerable:!(V=L(K,T))||V.enumerable});return M},C=(M,K,I)=>(Z(M,K,"default"),I&&Z(I,K,"default")),z=(M,K,I)=>(I=M!=null?J(b(M)):{},Z(K||!M||!M.__esModule?_(I,"default",{value:M,enumerable:!0}):I,M)),A=w((M,K)=>{function I(h){if(typeof h!="string")throw new TypeError("Path must be a string. Received "+JSON.stringify(h))}function V(h,x){for(var O="",p=0,F=-1,j=0,G,B=0;B<=h.length;++B){if(B<h.length)G=h.charCodeAt(B);else{if(G===47)break;G=47}if(G===47){if(!(F===B-1||j===1))if(F!==B-1&&j===2){if(O.length<2||p!==2||O.charCodeAt(O.length-1)!==46||O.charCodeAt(O.length-2)!==46){if(O.length>2){var N=O.lastIndexOf("/");if(N!==O.length-1){N===-1?(O="",p=0):(O=O.slice(0,N),p=O.length-1-O.lastIndexOf("/")),F=B,j=0;continue}}else if(O.length===2||O.length===1){O="",p=0,F=B,j=0;continue}}x&&(O.length>0?O+="/..":O="..",p=2)}else O.length>0?O+="/"+h.slice(F+1,B):O=h.slice(F+1,B),p=B-F-1;F=B,j=0}else G===46&&j!==-1?++j:j=-1}return O}function T(h,x){var O=x.dir||x.root,p=x.base||(x.name||"")+(x.ext||"");return O?O===x.root?O+p:O+h+p:p}var U={resolve:function(){for(var h="",x=!1,O,p=arguments.length-1;p>=-1&&!x;p--){var F;p>=0?F=arguments[p]:(O===void 0&&(O=process.cwd()),F=O),I(F),F.length!==0&&(h=F+"/"+h,x=F.charCodeAt(0)===47)}return h=V(h,!x),x?h.length>0?"/"+h:"/":h.length>0?h:"."},normalize:function(h){if(I(h),h.length===0)return".";var x=h.charCodeAt(0)===47,O=h.charCodeAt(h.length-1)===47;return h=V(h,!x),h.length===0&&!x&&(h="."),h.length>0&&O&&(h+="/"),x?"/"+h:h},isAbsolute:function(h){return I(h),h.length>0&&h.charCodeAt(0)===47},join:function(){if(arguments.length===0)return".";for(var h,x=0;x<arguments.length;++x){var O=arguments[x];I(O),O.length>0&&(h===void 0?h=O:h+="/"+O)}return h===void 0?".":U.normalize(h)},relative:function(h,x){if(I(h),I(x),h===x||(h=U.resolve(h),x=U.resolve(x),h===x))return"";for(var O=1;O<h.length&&h.charCodeAt(O)===47;++O);for(var p=h.length,F=p-O,j=1;j<x.length&&x.charCodeAt(j)===47;++j);for(var G=x.length,B=G-j,N=F<B?F:B,Q=-1,H=0;H<=N;++H){if(H===N){if(B>N){if(x.charCodeAt(j+H)===47)return x.slice(j+H+1);if(H===0)return x.slice(j+H)}else F>N&&(h.charCodeAt(O+H)===47?Q=H:H===0&&(Q=0));break}var q=h.charCodeAt(O+H),E=x.charCodeAt(j+H);if(q!==E)break;q===47&&(Q=H)}var X="";for(H=O+Q+1;H<=p;++H)(H===p||h.charCodeAt(H)===47)&&(X.length===0?X+="..":X+="/..");return X.length>0?X+x.slice(j+Q):(j+=Q,x.charCodeAt(j)===47&&++j,x.slice(j))},_makeLong:function(h){return h},dirname:function(h){if(I(h),h.length===0)return".";for(var x=h.charCodeAt(0),O=x===47,p=-1,F=!0,j=h.length-1;j>=1;--j)if(x=h.charCodeAt(j),x===47){if(!F){p=j;break}}else F=!1;return p===-1?O?"/":".":O&&p===1?"//":h.slice(0,p)},basename:function(h,x){if(x!==void 0&&typeof x!="string")throw new TypeError('"ext" argument must be a string');I(h);var O=0,p=-1,F=!0,j;if(x!==void 0&&x.length>0&&x.length<=h.length){if(x.length===h.length&&x===h)return"";var G=x.length-1,B=-1;for(j=h.length-1;j>=0;--j){var N=h.charCodeAt(j);if(N===47){if(!F){O=j+1;break}}else B===-1&&(F=!1,B=j+1),G>=0&&(N===x.charCodeAt(G)?--G===-1&&(p=j):(G=-1,p=B))}return O===p?p=B:p===-1&&(p=h.length),h.slice(O,p)}else{for(j=h.length-1;j>=0;--j)if(h.charCodeAt(j)===47){if(!F){O=j+1;break}}else p===-1&&(F=!1,p=j+1);return p===-1?"":h.slice(O,p)}},extname:function(h){I(h);for(var x=-1,O=0,p=-1,F=!0,j=0,G=h.length-1;G>=0;--G){var B=h.charCodeAt(G);if(B===47){if(!F){O=G+1;break}continue}p===-1&&(F=!1,p=G+1),B===46?x===-1?x=G:j!==1&&(j=1):x!==-1&&(j=-1)}return x===-1||p===-1||j===0||j===1&&x===p-1&&x===O+1?"":h.slice(x,p)},format:function(h){if(h===null||typeof h!="object")throw new TypeError('The "pathObject" argument must be of type Object. Received type '+typeof h);return T("/",h)},parse:function(h){I(h);var x={root:"",dir:"",base:"",ext:"",name:""};if(h.length===0)return x;var O=h.charCodeAt(0),p=O===47,F;p?(x.root="/",F=1):F=0;for(var j=-1,G=0,B=-1,N=!0,Q=h.length-1,H=0;Q>=F;--Q){if(O=h.charCodeAt(Q),O===47){if(!N){G=Q+1;break}continue}B===-1&&(N=!1,B=Q+1),O===46?j===-1?j=Q:H!==1&&(H=1):j!==-1&&(H=-1)}return j===-1||B===-1||H===0||H===1&&j===B-1&&j===G+1?B!==-1&&(G===0&&p?x.base=x.name=h.slice(1,B):x.base=x.name=h.slice(G,B)):(G===0&&p?(x.name=h.slice(1,j),x.base=h.slice(1,B)):(x.name=h.slice(G,j),x.base=h.slice(G,B)),x.ext=h.slice(j,B)),G>0?x.dir=h.slice(0,G-1):p&&(x.dir="/"),x},sep:"/",delimiter:":",win32:null,posix:null};U.posix=U,K.exports=U}),D={};y(D,{default:()=>P});C(D,z(A()));var P=z(A());var __dirname="/Users/sudhanshuraheja/code/src/github.com/open-language/en-wordnet/src",$=new Map;$.set("3.0",(void 0)(__dirname,"..","database","3.0"));$.set("3.1",(void 0)(__dirname,"..","database","3.1"));var W=$;export{W as default};
+// node:path
+var L = Object.create;
+var b = Object.defineProperty;
+var z = Object.getOwnPropertyDescriptor;
+var D = Object.getOwnPropertyNames;
+var T = Object.getPrototypeOf;
+var R = Object.prototype.hasOwnProperty;
+var _ = (f, e) => () => (e || f((e = { exports: {} }).exports, e), e.exports);
+var E = (f, e) => {
+  for (var r in e)
+    b(f, r, { get: e[r], enumerable: true });
+};
+var C = (f, e, r, l) => {
+  if (e && typeof e == "object" || typeof e == "function")
+    for (let i of D(e))
+      !R.call(f, i) && i !== r && b(f, i, { get: () => e[i], enumerable: !(l = z(e, i)) || l.enumerable });
+  return f;
+};
+var A = (f, e, r) => (C(f, e, "default"), r && C(r, e, "default"));
+var y = (f, e, r) => (r = f != null ? L(T(f)) : {}, C(e || !f || !f.__esModule ? b(r, "default", { value: f, enumerable: true }) : r, f));
+var h = _((F, S) => {
+  function c(f) {
+    if (typeof f != "string")
+      throw new TypeError("Path must be a string. Received " + JSON.stringify(f));
+  }
+  function w(f, e) {
+    for (var r = "", l = 0, i = -1, s = 0, n, t = 0;t <= f.length; ++t) {
+      if (t < f.length)
+        n = f.charCodeAt(t);
+      else {
+        if (n === 47)
+          break;
+        n = 47;
+      }
+      if (n === 47) {
+        if (!(i === t - 1 || s === 1))
+          if (i !== t - 1 && s === 2) {
+            if (r.length < 2 || l !== 2 || r.charCodeAt(r.length - 1) !== 46 || r.charCodeAt(r.length - 2) !== 46) {
+              if (r.length > 2) {
+                var a = r.lastIndexOf("/");
+                if (a !== r.length - 1) {
+                  a === -1 ? (r = "", l = 0) : (r = r.slice(0, a), l = r.length - 1 - r.lastIndexOf("/")), i = t, s = 0;
+                  continue;
+                }
+              } else if (r.length === 2 || r.length === 1) {
+                r = "", l = 0, i = t, s = 0;
+                continue;
+              }
+            }
+            e && (r.length > 0 ? r += "/.." : r = "..", l = 2);
+          } else
+            r.length > 0 ? r += "/" + f.slice(i + 1, t) : r = f.slice(i + 1, t), l = t - i - 1;
+        i = t, s = 0;
+      } else
+        n === 46 && s !== -1 ? ++s : s = -1;
+    }
+    return r;
+  }
+  function J(f, e) {
+    var r = e.dir || e.root, l = e.base || (e.name || "") + (e.ext || "");
+    return r ? r === e.root ? r + l : r + f + l : l;
+  }
+  var g = { resolve: function() {
+    for (var e = "", r = false, l, i = arguments.length - 1;i >= -1 && !r; i--) {
+      var s;
+      i >= 0 ? s = arguments[i] : (l === undefined && (l = process.cwd()), s = l), c(s), s.length !== 0 && (e = s + "/" + e, r = s.charCodeAt(0) === 47);
+    }
+    return e = w(e, !r), r ? e.length > 0 ? "/" + e : "/" : e.length > 0 ? e : ".";
+  }, normalize: function(e) {
+    if (c(e), e.length === 0)
+      return ".";
+    var r = e.charCodeAt(0) === 47, l = e.charCodeAt(e.length - 1) === 47;
+    return e = w(e, !r), e.length === 0 && !r && (e = "."), e.length > 0 && l && (e += "/"), r ? "/" + e : e;
+  }, isAbsolute: function(e) {
+    return c(e), e.length > 0 && e.charCodeAt(0) === 47;
+  }, join: function() {
+    if (arguments.length === 0)
+      return ".";
+    for (var e, r = 0;r < arguments.length; ++r) {
+      var l = arguments[r];
+      c(l), l.length > 0 && (e === undefined ? e = l : e += "/" + l);
+    }
+    return e === undefined ? "." : g.normalize(e);
+  }, relative: function(e, r) {
+    if (c(e), c(r), e === r || (e = g.resolve(e), r = g.resolve(r), e === r))
+      return "";
+    for (var l = 1;l < e.length && e.charCodeAt(l) === 47; ++l)
+      ;
+    for (var i = e.length, s = i - l, n = 1;n < r.length && r.charCodeAt(n) === 47; ++n)
+      ;
+    for (var t = r.length, a = t - n, v = s < a ? s : a, u = -1, o = 0;o <= v; ++o) {
+      if (o === v) {
+        if (a > v) {
+          if (r.charCodeAt(n + o) === 47)
+            return r.slice(n + o + 1);
+          if (o === 0)
+            return r.slice(n + o);
+        } else
+          s > v && (e.charCodeAt(l + o) === 47 ? u = o : o === 0 && (u = 0));
+        break;
+      }
+      var k = e.charCodeAt(l + o), P = r.charCodeAt(n + o);
+      if (k !== P)
+        break;
+      k === 47 && (u = o);
+    }
+    var d = "";
+    for (o = l + u + 1;o <= i; ++o)
+      (o === i || e.charCodeAt(o) === 47) && (d.length === 0 ? d += ".." : d += "/..");
+    return d.length > 0 ? d + r.slice(n + u) : (n += u, r.charCodeAt(n) === 47 && ++n, r.slice(n));
+  }, _makeLong: function(e) {
+    return e;
+  }, dirname: function(e) {
+    if (c(e), e.length === 0)
+      return ".";
+    for (var r = e.charCodeAt(0), l = r === 47, i = -1, s = true, n = e.length - 1;n >= 1; --n)
+      if (r = e.charCodeAt(n), r === 47) {
+        if (!s) {
+          i = n;
+          break;
+        }
+      } else
+        s = false;
+    return i === -1 ? l ? "/" : "." : l && i === 1 ? "//" : e.slice(0, i);
+  }, basename: function(e, r) {
+    if (r !== undefined && typeof r != "string")
+      throw new TypeError('"ext" argument must be a string');
+    c(e);
+    var l = 0, i = -1, s = true, n;
+    if (r !== undefined && r.length > 0 && r.length <= e.length) {
+      if (r.length === e.length && r === e)
+        return "";
+      var t = r.length - 1, a = -1;
+      for (n = e.length - 1;n >= 0; --n) {
+        var v = e.charCodeAt(n);
+        if (v === 47) {
+          if (!s) {
+            l = n + 1;
+            break;
+          }
+        } else
+          a === -1 && (s = false, a = n + 1), t >= 0 && (v === r.charCodeAt(t) ? --t === -1 && (i = n) : (t = -1, i = a));
+      }
+      return l === i ? i = a : i === -1 && (i = e.length), e.slice(l, i);
+    } else {
+      for (n = e.length - 1;n >= 0; --n)
+        if (e.charCodeAt(n) === 47) {
+          if (!s) {
+            l = n + 1;
+            break;
+          }
+        } else
+          i === -1 && (s = false, i = n + 1);
+      return i === -1 ? "" : e.slice(l, i);
+    }
+  }, extname: function(e) {
+    c(e);
+    for (var r = -1, l = 0, i = -1, s = true, n = 0, t = e.length - 1;t >= 0; --t) {
+      var a = e.charCodeAt(t);
+      if (a === 47) {
+        if (!s) {
+          l = t + 1;
+          break;
+        }
+        continue;
+      }
+      i === -1 && (s = false, i = t + 1), a === 46 ? r === -1 ? r = t : n !== 1 && (n = 1) : r !== -1 && (n = -1);
+    }
+    return r === -1 || i === -1 || n === 0 || n === 1 && r === i - 1 && r === l + 1 ? "" : e.slice(r, i);
+  }, format: function(e) {
+    if (e === null || typeof e != "object")
+      throw new TypeError('The "pathObject" argument must be of type Object. Received type ' + typeof e);
+    return J("/", e);
+  }, parse: function(e) {
+    c(e);
+    var r = { root: "", dir: "", base: "", ext: "", name: "" };
+    if (e.length === 0)
+      return r;
+    var l = e.charCodeAt(0), i = l === 47, s;
+    i ? (r.root = "/", s = 1) : s = 0;
+    for (var n = -1, t = 0, a = -1, v = true, u = e.length - 1, o = 0;u >= s; --u) {
+      if (l = e.charCodeAt(u), l === 47) {
+        if (!v) {
+          t = u + 1;
+          break;
+        }
+        continue;
+      }
+      a === -1 && (v = false, a = u + 1), l === 46 ? n === -1 ? n = u : o !== 1 && (o = 1) : n !== -1 && (o = -1);
+    }
+    return n === -1 || a === -1 || o === 0 || o === 1 && n === a - 1 && n === t + 1 ? a !== -1 && (t === 0 && i ? r.base = r.name = e.slice(1, a) : r.base = r.name = e.slice(t, a)) : (t === 0 && i ? (r.name = e.slice(1, n), r.base = e.slice(1, a)) : (r.name = e.slice(t, n), r.base = e.slice(t, a)), r.ext = e.slice(n, a)), t > 0 ? r.dir = e.slice(0, t - 1) : i && (r.dir = "/"), r;
+  }, sep: "/", delimiter: ":", win32: null, posix: null };
+  g.posix = g;
+  S.exports = g;
+});
+var m = {};
+E(m, { default: () => q });
+A(m, y(h()));
+var q = y(h());
+
+// src/index.ts
+var __dirname = "/Users/sudhanshuraheja/code/src/github.com/open-language/en-wordnet/src";
+var enWordnet = new Map;
+enWordnet.set("3.0", undefined(__dirname, "..", "database", "3.0"));
+enWordnet.set("3.1", undefined(__dirname, "..", "database", "3.1"));
+var src_default = enWordnet;
+export {
+  src_default as default
+};
